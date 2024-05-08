@@ -22,13 +22,13 @@ use App\Http\Controllers\ProductController;
 Route::post('/products', [ProductController::class, 'createProduct'])->name('createproducts');
 Route::get('/tambah-products', [ProductController::class, 'tambahProducts'])->name('tambah_products');
 
-// tampilan list data produk admin
-// Route::get('/product',[ProductController::class, 'products'])->name('product');
+// tampilan list data produk berdasarkan id akun
 Route::get('/admin/{id}/list-product',[ProductController::class, 'productsList'])->name('list_product');
 
-// tampilan list data produk user
-Route::get('/products',[ProductController::class, 'productUser'])->name('product_user');
+// tampilan semua produk
+Route::get('/products',[ProductController::class, 'productAll'])->name('product_user');
 
+// tampilan detail akun
 Route::get("/profile/{id}", [ProductController::class, 'profile']);
 
 // update produk

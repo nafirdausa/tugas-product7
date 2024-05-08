@@ -1,30 +1,55 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
   <body>
     
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-6 border border-3 border-black p-2">
-                    {{-- user --}}
-                    <p>Nama : {{ $akun->nama_akun }}</p>
-                    <p>email:  {{ $akun->email }}</p>
-                    <p>gender :  {{ $akun->gender }}</p>
-                    <p>umur :  {{ $akun->umur}} tahun</p>
-                    <p>tanggal lahir  :  {{ $akun->tgl_lahir }}</p>
-                    <p>Alamat  :  {{ $akun->alamat }}</p>
+        <div class="container mt-3">
+			<div class="text-center">
+				<a href="/admin/{{$akun->id}}/list-product" class="text-center"><button class="btn btn-success">Kembali Ke Halaman Admin</button></a>
+			</div>
+            <div class="row mt-5">
+                <div class="col border p-3 rounded border-dark border-3 mx-3">
+					<div class="d-flex">
+						<div class="w-50">
+							<p class="fw-bold">Nama</p>
+							<p class="fw-bold">Email</p>
+							<p class="fw-bold">Gender</p>
+							<p class="fw-bold">Umur</p>
+							<p class="fw-bold">Tanggal Lahir</p>
+							<p class="fw-bold">Alamat</p>
+						</div>
+						<div>
+							<p>{{ $akun->nama_akun }}</p>
+							<p>{{ $akun->email }}</p>
+							<p>{{ $akun->gender }}</p>
+							<p>{{ $akun->umur}} tahun</p>
+							<p>{{ $akun->tgl_lahir }}</p>
+							<p>{{ $akun->alamat }}</p>
+						</div>
+					</div>
                 </div>
-                <div class="col-6 border border-3 border-black p-2">
-                    {{-- user --}}
-                    <p>Nama toko : {{ $toko->nama_toko }}</p>
-                    <p>rate:  {{ $toko->rate }}</p>
-                    <p>produk terbaik :  {{ $toko->produk_terbaik }}</p>
-                    <p>deskripsi:  {{ $toko->deskripsi}}</p>
+
+                <div class="col border p-3 rounded border-dark border-3">
+					<div class="d-flex">
+						<div class="w-50">
+							<p class="fw-bold">Nama toko</p>
+							<p class="fw-bold">Rate</p>
+							<p class="fw-bold">Produk Terbaik</p>
+							<p class="fw-bold">Deskripsi</p>
+						</div>
+						<div>
+							<p>{{ $toko->nama_toko }}</p>
+							<p>{{ $toko->rate }}</p>
+							<p>{{ $toko->produk_terbaik }}</p>
+							<p>{{ $toko->deskripsi}}</p>
+						</div>
+					</div>
                 </div>
             </div>
          

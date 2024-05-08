@@ -46,8 +46,7 @@ class ProductController extends Controller
         }
         
         Product::create($list);
-        // return Redirect::to('/products');
-        return redirect()->route('list-product');
+        return redirect()->route('list_product');
         
     }
 
@@ -55,15 +54,14 @@ class ProductController extends Controller
         return view('form');
     }
 
-    // halaman list produk semua
-    public function productUser(){
+    // tampilan semua list produk 
+    public function productAll(){
         $list = Product::all();
         return view('products', ['list'=>$list]);
     }
 
     // halaman list produk per user
     public function productsList($akun_id){
-        // $list = Product::all();
         $list = Product::where('akun_id', $akun_id)->get();
         return view('list_product', ['list'=>$list, 'akun_id' =>$akun_id]);
     }
@@ -86,9 +84,8 @@ class ProductController extends Controller
         $id->deskripsi = $request->deskripsi;
 
         $id->save();
-
-        return redirect('/product')
-        ->with('success', 'Produk berhasil diperbarui');
+        
+        return redirect()->route('list_product', $id->akun_id);
     }
 
     // delete produk
@@ -98,9 +95,8 @@ class ProductController extends Controller
         return redirect()->back();
     }
 
+    // Detail Akun
     public function profile($akun_id){
-
-        // Mengambil satu objek User berdasarkan ID
         $akun = Akun::find($akun_id);
         $toko = $akun->toko;
         return view('profile',[

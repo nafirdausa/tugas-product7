@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>User-Product</title>
+    <title>Products</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
@@ -16,15 +16,10 @@
 <div class="rounded bg-info pt-3 pb-3">
 <h2 class="text-center fw-bold mt-2">PRODUCTS</h2>
 <div class="mt-3 bg-dark mx-auto rounded" style="height: 3px;width: 75px"></div>
-@foreach($list as $item)
 <div >
     <a href="/admin/1/list-product" style="position:absolute; top:80px; left:70px;"><button class="btn btn-primary rounded ">Halaman Pengguna Admin</button></a>
     <a href="/admin/2/list-product" style="position:absolute; top:80px; right:70px;"><button class="btn btn-success rounded ">Halaman Pengguna Merchant</button></a>
 </div>
-@endforeach
-{{-- <div style="position:absolute; top:80px; right:70px;">
-    <a href="{{route('product')}}"><button class="btn btn-success rounded ">Halaman Pengguna Merchant</button></a>
-</div> --}}
     <div class="grid mx-3 mt-4">
                 <div class="row row-gap-4">
                     @foreach ($list as $item)
